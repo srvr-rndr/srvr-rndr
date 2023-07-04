@@ -6,6 +6,7 @@ await build({
   entryPoints: ['./src/index.tsx'],
   outDir: './npm',
   test: false,
+  declaration: 'separate',
   shims: {
     // see JS docs for overview and more options
     deno: true,

@@ -3,21 +3,7 @@ import {
   renderToString,
   renderToReadableStream,
 } from 'https://esm.sh/react-dom@canary/server'
-import type { Handler } from './types.ts'
-
-export interface AppProps {
-  url: string
-}
-
-export interface FallbackProps {
-  error: Error
-}
-
-export interface Options {
-  App: React.FC<AppProps>
-  Fallback: React.FC<FallbackProps>
-  onError?: (error: unknown, errorInfo?: unknown) => void
-}
+import type { Handler, Options } from './types.ts'
 
 export default function getReactRequestHandler({
   App,

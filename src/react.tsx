@@ -1,5 +1,8 @@
-import React from 'npm:react'
-import { renderToString, renderToReadableStream } from 'npm:react-dom/server'
+import React from 'https://esm.sh/react@canary'
+import {
+  renderToString,
+  renderToReadableStream,
+} from 'https://esm.sh/react-dom@canary/server'
 import type { Handler } from './types.ts'
 
 export interface AppProps {
@@ -13,7 +16,7 @@ export interface FallbackProps {
 export interface Options {
   App: React.FC<AppProps>
   Fallback: React.FC<FallbackProps>
-  onError?: (err: Error) => void
+  onError?: (error: unknown, errorInfo?: unknown) => void
 }
 
 export default function getReactRequestHandler({
@@ -26,9 +29,9 @@ export default function getReactRequestHandler({
 
     try {
       let stream = await renderToReadableStream(<App url={url} />, {
-        onError(error: Error) {
+        onError(error: unknown, errorInfo) {
           if (typeof onError === 'function') {
-            onError(error)
+            onError(error, errorInfo)
           }
         },
       })

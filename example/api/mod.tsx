@@ -1,3 +1,4 @@
+#!/usr/bin/env DENO_DIR=/tmp deno run
 import React from 'https://esm.sh/react@canary'
 import {
   getReactRequestHandler,

@@ -1,1 +1,1 @@
-export const foo = 'bar'
+export { default as getReactRequestHandler } from './react.tsx'

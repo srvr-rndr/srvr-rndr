@@ -1,26 +1,7 @@
 {
-  "name": "@matthamlin/srvr",
-  "version": "0.0.1",
-  "repository": "git@github.com:hamlim/srvr.git",
-  "author": "Matt Hamlin <matthewjameshamlin@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "build": "deno --allow-all run scripts/build.ts",
-    "test": "deno test",
-    "test-watch": "deno test --watch",
-    "test-cov": "deno test",
-    "pub": "cd npm/ && npm publish --access public",
-    "tsc": "deno check"
-  },
-  "devDependencies": {
-    "@types/react": "latest",
-    "react": "experimental",
-    "react-dom": "experimental",
-    "turbo": "^1.9.3",
-    "typescript": "latest"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  }
+  "workspaces": [
+    "libs/*",
+    "example"
+  ],
+  "name": "root"
 }

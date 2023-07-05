@@ -1,5 +1,3 @@
 {
-  "functions": {
-    "api/**/*.ts[x]": { "runtime": "vercel-deno@3.0.2" }
-  }
+  "buildCommand": "deno run --allow-all scripts/build-example.ts"
 }

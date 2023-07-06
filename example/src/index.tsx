@@ -3,7 +3,7 @@ import {
   getReactRequestHandler,
   FallbackProps,
   AppProps,
-} from '@matthamlin/srvr'
+} from '@srvr-rndr/react'
 
 function App({ url }: AppProps) {
   return (

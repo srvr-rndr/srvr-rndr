@@ -1,6 +1,9 @@
 {
   "name": "@srvr-rndr/react",
   "version": "0.0.1",
+  "module": "./npm/esm/index.js",
+  "main": "./npm/script/index.js",
+  "types": "./npm/types/index.d.ts",
   "repository": {
     "type": "github",
     "directory": "/libs/react",

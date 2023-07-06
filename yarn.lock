@@ -2074,6 +2074,8 @@ __metadata:
 "@srvr-rndr/cli@workspace:*, @srvr-rndr/cli@workspace:libs/cli":
   version: 0.0.0-use.local
   resolution: "@srvr-rndr/cli@workspace:libs/cli"
+  bin:
+    srvr-rndr: ./npm/esm/cli.js
   languageName: unknown
   linkType: soft
 

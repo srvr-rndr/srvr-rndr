@@ -32,7 +32,7 @@ await build({
     repository: {
       type: 'git',
       url: 'git@github.com:srvr-rndr/srvr-rndr.git',
-      directory: '/libs/react',
+      directory: '/libs/cli',
     },
     bugs: {
       url: 'https://github.com/srvr-rndr/srvr-rndr/issues',

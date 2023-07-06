@@ -3,5 +3,5 @@
     "libs/*",
     "example"
   ],
-  "name": "root"
+  "name": "@srvr-rndr/srvr-rndr"
 }

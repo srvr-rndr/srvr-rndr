@@ -1,0 +1,8 @@
+{
+  "name": "@srvr-rndr/cli",
+  "version": "0.0.1",
+  "description": "The srvr-rndr CLI",
+  "scripts": {
+    "build": "deno run --allow-all ./scripts/build.ts"
+  }
+}

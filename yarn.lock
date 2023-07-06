@@ -1886,19 +1886,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@matthamlin/srvr@workspace:libs/srvr":
-  version: 0.0.0-use.local
-  resolution: "@matthamlin/srvr@workspace:libs/srvr"
-  dependencies:
-    "@types/react": latest
-    "@types/react-dom": latest
-    react: experimental
-    react-dom: experimental
-    turbo: ^1.9.3
-    typescript: latest
-  languageName: unknown
-  linkType: soft
-
 "@nicolo-ribaudo/semver-v6@npm:^6.3.3":
   version: 6.3.3
   resolution: "@nicolo-ribaudo/semver-v6@npm:6.3.3"
@@ -2093,6 +2080,31 @@ __metadata:
   checksum: 83839f13da2c29d55c97abc3bc2c55b250d33a0447554997a85c539e058e57b8da092da396e252b11ec24a0279a0bed1f537fa26302209327060643e327f81d2
   languageName: node
   linkType: hard
+
+"@srvr-rndr/cli@workspace:libs/cli":
+  version: 0.0.0-use.local
+  resolution: "@srvr-rndr/cli@workspace:libs/cli"
+  languageName: unknown
+  linkType: soft
+
+"@srvr-rndr/react@workspace:libs/react":
+  version: 0.0.0-use.local
+  resolution: "@srvr-rndr/react@workspace:libs/react"
+  dependencies:
+    "@types/react": latest
+    "@types/react-dom": latest
+    react: experimental
+    react-dom: experimental
+    turbo: ^1.9.3
+    typescript: latest
+  languageName: unknown
+  linkType: soft
+
+"@srvr-rndr/srvr-rndr@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@srvr-rndr/srvr-rndr@workspace:."
+  languageName: unknown
+  linkType: soft
 
 "@szmarczak/http-timer@npm:^4.0.5":
   version: 4.0.6
@@ -7570,12 +7582,6 @@ __metadata:
   checksum: 3fd4f88510ec1b54b07309ee63b7b363a1cd4ed6d05e93ec0e883a73df1ffe8bb88169538cb4f2c1ec2d4a7340216f9a8b4b8ce7c2ee054ded725f39d9e3ba36
   languageName: node
   linkType: hard
-
-"root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root@workspace:."
-  languageName: unknown
-  linkType: soft
 
 "run-async@npm:^2.4.0":
   version: 2.4.1

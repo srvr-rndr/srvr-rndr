@@ -1,7 +1,11 @@
 {
-  "name": "@matthamlin/srvr",
+  "name": "@srvr-rndr/react",
   "version": "0.0.1",
-  "repository": "git@github.com:hamlim/srvr.git",
+  "repository": {
+    "type": "github",
+    "directory": "/libs/react",
+    "url": "git@github.com:srvr-rndr/srvr-rndr.git"
+  },
   "author": "Matt Hamlin <matthewjameshamlin@gmail.com>",
   "license": "MIT",
   "scripts": {

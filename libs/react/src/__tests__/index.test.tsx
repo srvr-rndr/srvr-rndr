@@ -1,7 +1,7 @@
 import React from 'https://esm.sh/react@canary'
-import { getReactRequestHandler } from '../index.tsx'
-import type { AppProps, FallbackProps } from '../react.tsx'
 import { assertEquals } from 'https://deno.land/std@0.192.0/testing/asserts.ts'
+import { getReactRequestHandler } from '../index.tsx'
+import type { AppProps, FallbackProps } from '../index.tsx'
 
 function App({ url }: AppProps) {
   return <>{url}</>

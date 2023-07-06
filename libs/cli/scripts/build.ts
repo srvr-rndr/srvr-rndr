@@ -2,6 +2,12 @@ import { build, emptyDir } from 'https://deno.land/x/dnt/mod.ts'
 
 await emptyDir('./npm')
 
+if (!Deno.args[0]) {
+  throw new Error(`No \`version\` provided to build command!
+
+Re-run the command with a second argument of the version to build for!`)
+}
+
 await build({
   entryPoints: [
     {

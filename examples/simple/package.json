@@ -1,0 +1,15 @@
+{
+  "name": "simple-example",
+  "scripts": {
+    "build": "srvr-rndr build",
+    "deploy": "yarn build && vercel deploy --prebuilt"
+  },
+  "dependencies": {
+    "@srvr-rndr/cli": "workspace:*",
+    "@srvr-rndr/react": "workspace:*",
+    "react": "experimental"
+  },
+  "devDependencies": {
+    "vercel": "31.0.1"
+  }
+}

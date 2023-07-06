@@ -44,7 +44,5 @@ await build({
   postBuild() {
     // steps to run after building and before running the tests
     Deno.copyFileSync('README.md', 'npm/README.md')
-    Deno.mkdirSync('npm/bin', { recursive: true })
-    Deno.copyFileSync('bin/index.js', 'npm/bin/index.js')
   },
 })

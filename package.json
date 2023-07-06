@@ -1,7 +1,7 @@
 {
   "workspaces": [
     "libs/*",
-    "example"
+    "examples/*"
   ],
   "name": "@srvr-rndr/srvr-rndr"
 }

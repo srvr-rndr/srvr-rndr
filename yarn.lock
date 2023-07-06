@@ -1876,16 +1876,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@matthamlin/srvr@npm:0.0.2":
-  version: 0.0.2
-  resolution: "@matthamlin/srvr@npm:0.0.2"
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-  checksum: 9bec5a5b8b85f507a0c6b61009d428933b4061276db9dfed818c987e6680618462237876b6efa7d852f8413bd582bb9fd61baadff425fe7c3b4893b96d87f7da
-  languageName: node
-  linkType: hard
-
 "@nicolo-ribaudo/semver-v6@npm:^6.3.3":
   version: 6.3.3
   resolution: "@nicolo-ribaudo/semver-v6@npm:6.3.3"
@@ -2081,13 +2071,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srvr-rndr/cli@workspace:libs/cli":
+"@srvr-rndr/cli@workspace:*, @srvr-rndr/cli@workspace:libs/cli":
   version: 0.0.0-use.local
   resolution: "@srvr-rndr/cli@workspace:libs/cli"
   languageName: unknown
   linkType: soft
 
-"@srvr-rndr/react@workspace:libs/react":
+"@srvr-rndr/react@workspace:*, @srvr-rndr/react@workspace:libs/react":
   version: 0.0.0-use.local
   resolution: "@srvr-rndr/react@workspace:libs/react"
   dependencies:
@@ -4319,16 +4309,6 @@ __metadata:
   checksum: 0e9246bb16256eef07afa7f31408310a784407d2fec2ddd2d7fe1f885a45b7cf37e30739e658a65d000c3dcff8d5b5c96f9819188b00e1f667b6638e75eaf23c
   languageName: node
   linkType: hard
-
-"example@workspace:example":
-  version: 0.0.0-use.local
-  resolution: "example@workspace:example"
-  dependencies:
-    "@matthamlin/srvr": 0.0.2
-    react: experimental
-    vercel: 31.0.1
-  languageName: unknown
-  linkType: soft
 
 "execa@npm:5.1.1":
   version: 5.1.1
@@ -7781,6 +7761,17 @@ __metadata:
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
   languageName: node
   linkType: hard
+
+"simple-example@workspace:examples/simple":
+  version: 0.0.0-use.local
+  resolution: "simple-example@workspace:examples/simple"
+  dependencies:
+    "@srvr-rndr/cli": "workspace:*"
+    "@srvr-rndr/react": "workspace:*"
+    react: experimental
+    vercel: 31.0.1
+  languageName: unknown
+  linkType: soft
 
 "slash@npm:^3.0.0":
   version: 3.0.0

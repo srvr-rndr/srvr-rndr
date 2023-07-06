@@ -14,7 +14,6 @@ yarn add @srvr-rndr/react @srvr-rndr/cli
 
 And react, react-dom...
 
-
 2. Create an `index.tsx` file with the following contents:
 
 ```tsx
@@ -52,7 +51,7 @@ In your package.json:
 ```json
 {
   "scripts": {
-    "build": "srvr-rndr build",
+    "build": "srvr-rndr build"
   }
 }
 ```
@@ -68,3 +67,12 @@ Add a `vercel.json` file with the following contents:
 ```
 
 Run `vercel build` and then `vercel deploy --prebuilt`!
+
+## Inspiration / Thanks:
+
+- Shout out to [Daishi (@dai_shi)](https://twitter.com/dai_shi) on twitter for
+  the idea to tackle this in
+  [this tweet](https://twitter.com/dai_shi/status/1670963177897742337)
+- Deno and the deno ecosystem for making it so easy to work with modern JS/TS
+  features without tooling overhead!
+- Vercel for their Vercel Build API!

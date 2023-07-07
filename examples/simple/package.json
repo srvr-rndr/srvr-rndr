@@ -1,7 +1,7 @@
 {
   "name": "simple-example",
   "scripts": {
-    "build": "yarn run -B srvr-rndr build",
+    "build": "yarn run srvr-rndr build",
     "deploy": "yarn build && vercel deploy --prebuilt"
   },
   "dependencies": {

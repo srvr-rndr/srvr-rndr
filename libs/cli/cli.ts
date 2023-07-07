@@ -1,50 +1,74 @@
-console.log(Deno.cwd());
-console.log(typeof Deno.cwd());
+import * as esbuild from 'npm:esbuild'
 
-// import * as esbuild from 'npm:esbuild'
+function cleanDir(path: string): void {
+  try {
+    Deno.removeSync(path, { recursive: true })
+  } catch (e) {
+    // ignore
+  }
+}
 
-// // @CLI_TODO: handle client side references somehow!
-// await esbuild.build({
-//   // @CLI_TODO: Handle multiple entrypoints
-//   entryPoints: ['app/index.tsx'],
-//   bundle: true,
-//   outdir: 'dist',
-//   platform: 'browser',
-//   conditions: ['edge-light', 'edge'],
-//   format: 'esm',
-//   jsx: 'automatic',
-//   minify: true,
-// })
+interface BuildServerFunctionInput {
+  /**
+   * The name of the server function
+   *
+   * Also serves as the path that the function is exposed via
+   * e.g. name: 'foo' -> example.com/foo handler
+   */
+  name: string
+}
 
-// let output = `./.vercel/output`
+// @CLI_TODO: Handle multiple entrypoints
+async function buildServerFunction({
+  name,
+}: BuildServerFunctionInput): Promise<void> {
+  let path = `${Deno.cwd()}/app/${name}`
 
-// let funcs = `${output}/functions`
+  await esbuild.build({
+    entryPoints: [path.toString()],
+    bundle: true,
+    outdir: `./.vercel/output/functions/${name}.func`,
+    platform: 'browser',
+    conditions: ['edge-light', 'edge'],
+    format: 'esm',
+    jsx: 'automatic',
+    minify: true,
+  })
+}
 
-// try {
-//   Deno.removeSync('./.vercel', { recursive: true })
-// } catch (e) {
-//   // ignored
-// }
+let output = `./.vercel/output`
 
-// Deno.mkdirSync(`${funcs}/index.func`, { recursive: true })
-// Deno.copyFileSync('./dist/index.js', `${funcs}/index.func/index.js`)
+let funcs = `${output}/functions`
 
-// let vcConfig = {
-//   runtime: 'edge',
-//   entrypoint: 'index.js',
-// }
+cleanDir('./.vercel')
 
-// let textEncoder = new TextEncoder()
-// let vcConfigEncoded = textEncoder.encode(JSON.stringify(vcConfig, null, 2))
+// @CLI_TODO: handle client side references somehow!
+await buildServerFunction({
+  name: 'index',
+})
 
-// Deno.writeFileSync(`${funcs}/index.func/.vc-config.json`, vcConfigEncoded)
+console.log(`Built server functions!`)
 
-// let generalConfig = {
-//   version: 3,
-// }
+let vcConfig = {
+  runtime: 'edge',
+  entrypoint: 'index.js',
+}
 
-// let generalConfigEncoded = textEncoder.encode(
-//   JSON.stringify(generalConfig, null, 2),
-// )
+let textEncoder = new TextEncoder()
+let vcConfigEncoded = textEncoder.encode(JSON.stringify(vcConfig, null, 2))
 
-// Deno.writeFileSync(`${output}/config.json`, generalConfigEncoded)
+Deno.writeFileSync(`${funcs}/index.func/.vc-config.json`, vcConfigEncoded)
+
+console.log(`Wrote server function config!`)
+
+let generalConfig = {
+  version: 3,
+}
+
+let generalConfigEncoded = textEncoder.encode(
+  JSON.stringify(generalConfig, null, 2),
+)
+
+Deno.writeFileSync(`${output}/config.json`, generalConfigEncoded)
+
+console.log(`Wrote top level vercel config!`)

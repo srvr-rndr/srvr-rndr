@@ -1,9 +1,9 @@
-import React from 'https://esm.sh/react@canary'
+import React from "https://esm.sh/react@canary";
 import {
-  renderToString,
   renderToReadableStream,
-} from 'https://esm.sh/react-dom@canary/server'
-import type { Handler, Options } from './types.ts'
+  renderToString,
+} from "https://esm.sh/react-dom@canary/server";
+import type { Handler, Options } from "./types.ts";
 
 export default function getReactRequestHandler({
   App,
@@ -11,27 +11,27 @@ export default function getReactRequestHandler({
   Fallback,
 }: Options): Handler {
   return async function handleRequest(request: Request): Promise<Response> {
-    let url = request.url
+    let url = request.url;
 
     try {
       let stream = await renderToReadableStream(<App url={url} />, {
         onError(error: unknown, errorInfo: unknown) {
-          if (typeof onError === 'function') {
-            onError(error, errorInfo)
+          if (typeof onError === "function") {
+            onError(error, errorInfo);
           }
         },
-      })
+      });
 
       return new Response(stream, {
         status: 200,
-      })
+      });
     } catch (e) {
-      if (typeof onError === 'function') {
-        onError(e)
+      if (typeof onError === "function") {
+        onError(e);
       }
       return new Response(renderToString(<Fallback error={e} />), {
         status: 500,
-      })
+      });
     }
-  }
+  };
 }

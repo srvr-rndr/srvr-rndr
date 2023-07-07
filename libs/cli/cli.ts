@@ -1,5 +1,5 @@
-console.log(Deno.cwd())
-console.log(typeof Deno.cwd())
+console.log(Deno.cwd());
+console.log(typeof Deno.cwd());
 
 // import * as esbuild from 'npm:esbuild'
 

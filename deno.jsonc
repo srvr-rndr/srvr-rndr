@@ -3,5 +3,8 @@
     "rules": {
       "exclude": ["prefer-const"]
     }
+  },
+  "fmt": {
+    "semiColons": false
   }
 }

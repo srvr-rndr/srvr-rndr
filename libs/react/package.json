@@ -15,7 +15,7 @@
     "build": "deno run --allow-all scripts/build.ts",
     "test": "deno test",
     "test-watch": "deno test --watch",
-    "test-cov": "deno test",
+    "test-cov": "deno test --coverage=coverage",
     "pub": "cd npm/ && npm publish --access public",
     "tsc": "deno check"
   },

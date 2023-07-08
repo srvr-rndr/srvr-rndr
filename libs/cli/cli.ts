@@ -3,7 +3,7 @@ import * as esbuild from 'npm:esbuild'
 function cleanDir(path: string): void {
   try {
     Deno.removeSync(path, { recursive: true })
-  } catch (e) {
+  } catch {
     // ignore
   }
 }

@@ -3,5 +3,8 @@
     "libs/*",
     "examples/*"
   ],
-  "name": "@srvr-rndr/srvr-rndr"
+  "name": "@srvr-rndr/srvr-rndr",
+  "devDependencies": {
+    "turbo": "^1.10.7"
+  }
 }

@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "Note: This isn't the real package.json!",
   "scripts": {
-    "build": "deno run --allow-all ./scripts/build.ts"
+    "build": "deno run --allow-all ./scripts/build.ts",
+    "test": "deno test",
+    "lint": "deno lint",
+    "format": "deno fmt",
+    "format:check": "deno fmt --check"
   },
   "bin": {
     "srvr-rndr": "./npm/esm/cli.js"

@@ -2,9 +2,19 @@
   "lint": {
     "rules": {
       "exclude": ["prefer-const"]
-    }
+    },
+    "exclude": ["**/npm/", "**/.vercel/"]
   },
   "fmt": {
-    "semiColons": false
+    "semiColons": false,
+    "singleQuote": true,
+    "exclude": ["**/npm/", "**/.vercel/"]
+  },
+  "tasks": {
+    "build": "yarn run turbo run build",
+    "lint": "yarn run turbo run lint",
+    "test": "yarn run turbo run test",
+    "format": "yarn run turbo run format",
+    "format:check": "yarn run turbo run format:check"
   }
 }

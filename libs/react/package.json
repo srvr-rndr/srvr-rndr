@@ -14,10 +14,12 @@
   "scripts": {
     "build": "deno run --allow-all scripts/build.ts",
     "test": "deno test",
+    "lint": "deno lint",
+    "format": "deno fmt",
+    "format:check": "deno fmt --check",
     "test-watch": "deno test --watch",
     "test-cov": "deno test --coverage=coverage",
-    "pub": "cd npm/ && npm publish --access public",
-    "tsc": "deno check"
+    "pub": "cd npm/ && npm publish --access public"
   },
   "devDependencies": {
     "@types/react": "latest",

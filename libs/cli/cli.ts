@@ -8,6 +8,14 @@ function cleanDir(path: string): void {
   }
 }
 
+let vercelDir = `./.vercel`
+
+let output = `${vercelDir}/output`
+
+let funcs = `${output}/functions`
+
+cleanDir(vercelDir)
+
 interface BuildServerFunctionInput {
   /**
    * The name of the server function
@@ -27,7 +35,7 @@ async function buildServerFunction({
   await esbuild.build({
     entryPoints: [path.toString()],
     bundle: true,
-    outdir: `./.vercel/output/functions/${name}.func`,
+    outdir: `${funcs}/${name}.func`,
     platform: 'browser',
     conditions: ['edge-light', 'edge'],
     format: 'esm',
@@ -35,12 +43,6 @@ async function buildServerFunction({
     minify: true,
   })
 }
-
-let output = `./.vercel/output`
-
-let funcs = `${output}/functions`
-
-cleanDir('./.vercel')
 
 // @CLI_TODO: handle client side references somehow!
 await buildServerFunction({
@@ -59,7 +61,7 @@ let vcConfigEncoded = textEncoder.encode(JSON.stringify(vcConfig, null, 2))
 
 Deno.writeFileSync(`${funcs}/index.func/.vc-config.json`, vcConfigEncoded)
 
-console.log(`Wrote server function config!`)
+console.log(`Created server function config!`)
 
 let generalConfig = {
   version: 3,
@@ -71,4 +73,6 @@ let generalConfigEncoded = textEncoder.encode(
 
 Deno.writeFileSync(`${output}/config.json`, generalConfigEncoded)
 
-console.log(`Wrote top level vercel config!`)
+console.log(`Created top level vercel config!`)
+
+console.log(`Finished building the application! 🎉`)

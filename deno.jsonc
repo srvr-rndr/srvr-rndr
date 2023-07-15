@@ -3,7 +3,7 @@
     "rules": {
       "exclude": ["prefer-const"]
     },
-    "exclude": ["**/npm/", "**/.vercel/"]
+    "exclude": ["**/npm/", "**/.vercel/", "**/examples/"]
   },
   "fmt": {
     "semiColons": false,

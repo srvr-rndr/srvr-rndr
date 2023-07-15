@@ -105,3 +105,73 @@ the current available tasks are:
     workspaces
   - The `<version-number>` is required, and generates the latest version of the
     published packages
+
+## Overarching Goals:
+
+1. Try to be as "Web-native" as possible
+
+Meaning the framework will strive to leverage globals that are web-standard, for
+example using native `Request` and `Response` built-ins, or using native
+`globalThis.fetch` etc.
+
+My hope is that the framework can be widely used because of this decision.
+
+2. Make it work, make it easy to use, make it simple, then make it performant
+
+It may seem odd to have performance be the fourth goal, but I'd rather have a
+nice to use framework than something super brittle.
+
+I want it to:
+
+- work
+  - It should do what it says it will do
+- be easy to use
+  - Someone should be able to pick up the concepts within the span of an hour
+- be simple
+  - Anyone should be able to understand the inner workings of the framework and
+    contribute to it
+- be performant
+  - It should offer performant defaults
+
+## Opinions:
+
+While the intent with this project is to create a relatively un-opinionated
+framework, it does have a few opinions that are documented here.
+
+### Code for applications lives within an `app/` directory
+
+Example directory structure:
+
+```txt
+your-app/
+  app/
+    index.tsx
+    Feature.tsx
+    utils.ts
+```
+
+### Aim for fewer, larger files
+
+Most frameworks force separate files for different routes, Srvr Rndr does the
+opposite. This is mainly because most of the application should live on the
+server, and only a few features will run on the client.
+
+### Config, if any, should be easy to understand and maintain
+
+Several frameworks have combined config of features/routes within the source
+code of the feature. This has some nice benefits but comes with the trade off of
+being either oddly constraining, or includes additional complexity within the
+framework itself.
+
+At the moment I'm leaning towards maintaining config in a central place, that
+can easily be imported / resolved without a transform at the framework level.
+
+### Don't use this for complex applications
+
+This might be a surprising thing to find on a project readme, but at the moment
+I feel like the project wouldn't be suitable for any and all web applications,
+instead I think it best serves fairly "simple" web pages (think a blog, or a
+documentation site).
+
+If you're building an e-commerce experience, you may want to consider
+alternative solutions like Next.js!
